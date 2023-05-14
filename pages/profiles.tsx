@@ -38,7 +38,7 @@ const Profiles = () => {
                         <div className="mx-auto group flex-fow w-44">
                             <div className="flex items-center justify-center overflow-hidden border-2 border-transparent border-white rounded-md w-44 h-44 group-hover:cursor-pointer group-hover:"
                             >
-                                <Image src="/images/default-blue.png" alt="Profile" />
+                                <Image src="/images/default-blue.png" alt="Profile" width="172" height="172"/>
                             </div>
                             <div className="mt-4 text-2xl text-center text-gray-400 group-hover:text-white">
                                 {user?.name}
