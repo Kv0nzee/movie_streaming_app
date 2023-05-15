@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
+import { useRouter } from 'next/router';
 
 import { BsFillPlayFill } from 'react-icons/bs';
 import FavoriteButton from './FavoriteButton';
@@ -9,6 +10,9 @@ interface MovieCardProps {
 }
 
 const MovieCard:React.FC<MovieCardProps> = ({data}) => {
+  
+  const router = useRouter();
+   
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
         <img className="cursor-pointer object-cover 
@@ -48,7 +52,7 @@ const MovieCard:React.FC<MovieCardProps> = ({data}) => {
             <div className="absolute z-10 w-full p-2 transition bg-zinc-800 lg:p-4 shadow-b-md roundex-b-md">
                 <div className="flex flex-row items-center gap-3">
                     <div className="flex items-center justify-center w-6 h-6 transition bg-white cursor-pointer lg:w-10 lg:h-10 roundex-full hover:bg-neutral-300 " 
-                        onClick={() => {}}>
+                        onClick={() => router.push(`/watch/${data?.id}`)}>
                         <BsFillPlayFill size={30}/>
                     </div>
                     <FavoriteButton movieId={data?.id} />
